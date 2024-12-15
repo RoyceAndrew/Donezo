@@ -22,12 +22,12 @@ app.use('/api/user', routerUser)
 
 
 
-mongoose.connect(process.env.DB_URL).then(() => {
-app.listen(process.env.PORT, () => {
-    console.log("the backend server now running on " + process.env.PORT)
-})
-}).catch((err) => {
-    console.log(err)
-})
+mongoose.connect(process.env.DB_URL)
+  .then(() => {
+    console.log("Connected to MongoDB");
+  })
+  .catch((err) => {
+    console.error("Failed to connect to MongoDB:", err);
+  });
 
-
+export default app;
