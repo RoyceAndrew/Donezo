@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: "Comic Neue"
+}
+
+:root {
+    --background: #CAF4FF;
+    --highlight: #E38E49;
+}
+
+body {
+background-color: var(--background);
+background-image: url("https://www.transparenttextures.com/patterns/always-grey.png");
+}
+
+.darkbackground {
+    background-color: #9DB2BF !important;
+    
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
