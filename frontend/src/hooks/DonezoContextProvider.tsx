@@ -8,7 +8,7 @@ export const donezoReducer = (state: any, action: any) => {
         case "CREATE_WORKOUT":
             return { donezo: [action.payload, ...state.donezo] };
         case "DELETE_DONEZO":
-            return { donezo: state.donezo.filter(d => {
+            return { donezo: state.donezo.filter((d: { _id: any; }) => {
                return action.payload._id != d._id
             })};
         default:

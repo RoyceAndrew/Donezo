@@ -5,7 +5,7 @@ import Login from "./pages/Login";
 import { useUserContext } from "./hooks/useUserContext";
 
 function App() {
-  const [user, dispatch] = useUserContext() 
+  const [user,] = useUserContext() 
 
   return (
     <>

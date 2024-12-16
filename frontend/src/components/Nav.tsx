@@ -7,7 +7,7 @@ function Nav() {
     const [darkI, setDarkI] = useState(true)
     const [vis, setVis] = useState(false)
     const [user, dispatch] = useUserContext()
-    const [donezo, dispatchDonezo] = useDonezoContext();
+    const [, dispatchDonezo] = useDonezoContext();
     
     const [lScroll, setLscr] = useState(0)
 

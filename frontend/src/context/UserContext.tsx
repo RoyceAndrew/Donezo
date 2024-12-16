@@ -1,5 +1,5 @@
-import { createContext } from "react";
+import { createContext } from 'react';
 
-const UserContext = createContext(null)
+const UserContext = createContext<[any, React.Dispatch<any>] | null>(null);
 
-export default UserContext
+export default UserContext;
