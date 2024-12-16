@@ -26,4 +26,4 @@ const DonezoProvider = ({ children }: { children: ReactNode }) => {
     );
 };
 
-export default DonezoProvider;
+export default DonezoProvider

@@ -1,9 +1,9 @@
-import Nav from "../components/Nav";
 import { useEffect, useContext, useState } from "react";
-import DoneList from "../components/DoneList";
-import Upload from "../components/Upload";
 import axios from "axios";
 import DonezoContext from "../context/DonezoContext";
+import Nav from "../components/Nav";
+import DoneList from "../components/DoneList";
+import Upload from "../components/Upload";
 
 type DonezoItem = {
   _id: string;
@@ -14,10 +14,7 @@ type DonezoItem = {
 
 function Home() {
   // Menggunakan objek context dengan tipe eksplisit
-  const { donezo, dispatch } = useContext(DonezoContext) as {
-    donezo: DonezoItem[];
-    dispatch: React.Dispatch<any>;
-  };
+  const [ donezo, dispatch ] = useContext(DonezoContext);
 
   const [check, setCheck] = useState<boolean>(false);
 
@@ -45,12 +42,12 @@ function Home() {
   }, [dispatch]);
 
   useEffect(() => {
-    if (donezo && donezo.length == 0) {
-        setCheck(true)
-     } else {
-         setCheck(false)
-     }
-},[donezo])
+    if (donezo && donezo.length === 0) {
+      setCheck(true);
+    } else {
+      setCheck(false);
+    }
+  }, [donezo]);
 
   return (
     <>
