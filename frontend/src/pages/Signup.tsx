@@ -51,7 +51,7 @@ function Signup() {
           Sign Up
         </button>
         {error && (
-          <div className="ring-red-900 w-full ring-2 h-auto bg-red-300 p-3 mt-5">
+          <div className="ring-red-900 w-full max-w-[300px] ring-2 h-auto bg-red-300 p-3 mt-5">
             <p className="text-red-900">Error: {error}</p>
           </div>
         )}
