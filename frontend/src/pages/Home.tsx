@@ -45,8 +45,12 @@ function Home() {
   }, [dispatch]);
 
   useEffect(() => {
-    setCheck(donezo.length === 0);
-  }, [donezo]);
+    if (donezo && donezo.length == 0) {
+        setCheck(true)
+     } else {
+         setCheck(false)
+     }
+},[donezo])
 
   return (
     <>
