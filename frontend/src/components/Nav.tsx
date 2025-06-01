@@ -31,16 +31,41 @@ function Nav() {
 
     },[lScroll])
     
+    useEffect(() => {
+        
+        const element = document.getElementsByTagName("html")[0]
+        const background = document.getElementsByTagName("body")[0]
+        const check = localStorage.getItem("dark")
+        if (!check) {
+            localStorage.setItem("dark", "false")
+            setDarkI(false)
+            background.className = "darkbackground"
+            element.className = "dark"
+        }
+        if (check == "false") {
+            element.className = ""
+           background.className = ""
+           setDarkI(true)
+        } else if (check == "true") {
+              
+        setDarkI(false)
+        background.className = "darkbackground"
+        element.className = "dark"
+        }
+    }, [])
 
     function darkMode() {
     
         const element = document.getElementsByTagName("html")[0]
         const background = document.getElementsByTagName("body")[0]
-        if (element.classList.value == "") {
+        const check = localStorage.getItem("dark")
+        if (check == "false") {
+        localStorage.setItem("dark", "true")    
         setDarkI(false)
         background.className = "darkbackground"
         element.className = "dark"
-        } else if (element.classList.value == "dark") {
+        } else if (check == "true") {
+           localStorage.setItem("dark", "false")
            element.className = ""
            background.className = ""
            setDarkI(true)
